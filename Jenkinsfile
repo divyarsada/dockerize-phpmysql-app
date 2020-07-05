@@ -1,8 +1,8 @@
-def dockerImageID = 'sampletest19/phpmysql'
+def dockerImageID='sampletest19/phpmysql'
 pipeline {
   agent any
   stages {
-	 stage('Checkout external proj') {
+	stage('Checkout external proj') {
         steps {
             git branch: 'master',
                 credentialsId: 'GitHub_key',
@@ -27,5 +27,5 @@ pipeline {
 			}
 		}
 	}
-}
+  }
 }
