@@ -10,10 +10,8 @@ pipeline {
             }
         }
         stage('Lint HTML') {
-            steps {
-                dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
-                sh 'docker-compose up -d'
-            }
+            dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
+            sh 'docker-compose up -d'
         }
           
         stage('Upload to AWS') {
