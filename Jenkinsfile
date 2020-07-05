@@ -11,8 +11,10 @@ pipeline {
         }
         stage('Lint HTML') {
             steps {
-                dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
-                sh 'docker-compose up -d'
+		script {
+                    dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
+                    docker-compose up -d
+		}
 	    }
         }
           
