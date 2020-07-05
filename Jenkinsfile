@@ -1,6 +1,6 @@
 def dockerImageID='sampletest19/phpmysql'
 pipeline {
-     agent any
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Lint HTML') {
             steps {
-                dockerImageID = docker-compose.build registry + ":$BUILD_NUMBER"
+                dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
                 sh 'docker-compose up -d'
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                     docker.withRegistry('https://registry.hub.docker.com', docker_cred) {
                     dockerImageID.push()
                     }    
-		     	}
+		}
             }
         }
     }
