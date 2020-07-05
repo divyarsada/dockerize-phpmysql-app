@@ -7,7 +7,6 @@ pipeline {
             git branch: 'master',
                 credentialsId: 'GitHub_key',
                 url: 'https://github.com/divyarsada/dockerize-phpmysql-app.git'
-
             sh "ls -lat"
         }
     }
@@ -28,4 +27,5 @@ pipeline {
 			}
 		}
 	}
+}
 }
