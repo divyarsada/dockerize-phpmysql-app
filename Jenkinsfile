@@ -13,7 +13,7 @@ pipeline {
             steps {
 		script {
                     dockerImageID = docker compose.build registry + ":$BUILD_NUMBER"
-                    docker-compose up -d
+                    docker compose up -d
 		}
 	    }
         }
